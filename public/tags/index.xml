@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Hugo Ivy</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Hugo Ivy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android</title>
+      <link>/tags/android/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>/tags/java/</link>
+      <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Read</title>
+      <link>/tags/read/</link>
+      <pubDate>Sun, 18 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/read/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Translate</title>
+      <link>/tags/translate/</link>
+      <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/translate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>/tags/tutorial/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>设计模式</title>
+      <link>/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 18 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

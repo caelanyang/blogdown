@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>关于共享单车的一些胡思乱想 - Hugo Ivy</title>
+    <meta property="og:title" content="关于共享单车的一些胡思乱想 - Hugo Ivy">
+    
+
+    
+      
+    
+
+    
+
+    
+    
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+  </head>
+
+  
+  <body class="post">
+    <header class="masthead">
+      <h1><a href="/">Hugo Ivy</a></h1>
+
+<p class="tagline">Yang Jiacheng&#39;s Home Page.</p>
+
+      <nav class="menu">
+        <input id="menu-check" type="checkbox" />
+        <label id="menu-label" for="menu-check" class="unselectable">
+          <span class="icon close-icon">✕</span>
+          <span class="icon open-icon">☰</span>
+          <span class="text">Menu</span>
+        </label>
+        <ul>
+        
+        
+        <li><a href="/">Home</a></li>
+        
+        <li><a href="/post/">Blog</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/categories/">Categories</a></li>
+        
+        <li><a href="/tags/">Tags</a></li>
+        
+        <li><a href="/index.xml">Subscribe</a></li>
+        
+        
+        </ul>
+      </nav>
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>关于共享单车的一些胡思乱想</h1>
+
+<h3>杨嘉程
+  /  2017-06-23</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+<h2 id="起因">起因</h2>
+
+<p>投资了摩拜的马化腾和投资了ofo的朱啸虎在朋友圈互怼了起来，争论摩拜与ofo的优劣。看到马化腾最后一句：『堆一堆哑终端谁不会？』引发了我的思考。</p>
+
+<h2 id="对比">对比</h2>
+
+<p>众所周知，ofo一开始采用的是机械锁，这也导致了车子没有定位，丢失无法找回，用户骑完可以不锁车，甚至有些用户加上了私锁据为己有。而摩拜从第一代车型，就一直采用带有GPS定位的智能锁，且锁与服务器之间可以双向通信，并以此为基础进行扫码开锁，关锁计费。实现了服务器、单车、用户三者之间的闭环。虽然ofo后面的车型也使用了智能锁，但是并没有实现与服务器的双向通信，在服务器与单车之间始终存在着一个开环。相比，摩拜的生态要比ofo的生态更加完整，也更加完善。对比两者的单车损坏率也可见一斑。</p>
+
+<p>基于摩拜完整的闭环生态，我做了以下一些思考。</p>
+
+<h2 id="1-lbs-基于位置服务">1. LBS（基于位置服务）</h2>
+
+<p>摩拜已经成为继地图、美团、滴滴等之后的又一大 LBS 入口，有了微信扫码直接开锁的加持之后，这一入口的流量变得更加巨大。目前摩拜的 LBS 的主要形式是基于用户扫码开锁的前期阶段，即用户根据地图查找附近的单车，但是这一特性由于很多用户是看到单车才去扫码而减弱不少。考虑到摩拜是人们出行最后一公里的解决方案，所以用户停车的地方，一般会是出行的目的地，或阶段性的目的地，如地铁站、公交站等。有没有一种可能，摩拜可以把 LBS 扩展到用户使用的后期，即关锁计费支付的阶段。</p>
+
+<ol>
+<li>在用户关锁支付之后，推荐附近有活动的商家，或是在商家附近地点签到，累计一定次数之后可以获得优惠券。</li>
+<li>利用合作伙伴（比如腾讯）提供的用户画像，推荐更符合用户兴趣喜好的商家。</li>
+</ol>
+
+<h2 id="2-碳账户">2. 碳账户</h2>
+
+<p>支付宝为每个开通蚂蚁森林的用户创建了一个碳账户，用户的低碳行为，比如走路，线上办理业务等都会产生相应的绿色能量，目前，用户可以在支付宝中积攒能量来换取蚂蚁金服在沙漠地区边缘种一棵真树来阻止沙漠区域的扩大。</p>
+
+<p>在未来，随着减排的展开，也许会发展出来基于碳账户的碳交易。即一些排放量比较大的企业可以从拥有剩余排放量的企业和个人手中购买排放量以满足自身超出标准的排放量。支付宝的碳账户有对未来的碳交易也有所准备。</p>
+
+<p>相比于支付宝中的低碳行为，共享单车的骑行更是名副其实的低碳出行方案。基于此，摩拜可以搭建自己的碳账户体系或跟腾讯合作。</p>
+
+<ol>
+<li>目前摩拜已经为用户展现节约碳排放的数据，但只是一个初步的基于骑行公里数的数据，并没有进行数据的深度挖掘，以及搭建一个统一的碳账户体系。</li>
+<li>考虑到目前数据共享的时代趋势以及腾讯与摩拜的关系，可以与微信运动中每天的行走步数进行数据的共享，将用户行走、骑行这些低碳行为统一起来，归置到统一的碳账户之下。目前微信以及微信支付中并没有完善的信用体系以及碳账户，在这方面，蚂蚁金服的芝麻信用和碳账户确实走在了前面。</li>
+</ol>
+
+<h2 id="3-与健身-社交的连通">3. 与健身、社交的连通</h2>
+
+<p>很多人说，坚持跑完马拉松的唯一动力就是跑完之后可以晒朋友圈了。这正是中国健身届的现状。老外健身是给自己看的，我们健身是给别人看的。虽然有些说笑，但是也反应了在中国健身与社交密切相关。</p>
+
+<p>摩拜单车的骑行当然是健身的一种方式，特别是爬坡的时候：），虽然现在摩拜也向用户展示了累计骑行的公里数以及运动成就（消耗的卡路里），但是和上面节约碳排放的数据一样的，仅仅只是一个统计数据，没有深度挖掘。社交分享方面，也只是每次骑行完之后分享单次行程，并且分享方式侧重于推广而不是社交。</p>
+
+<ol>
+<li>深度挖掘自身内部的统计数据，骑行公里数的成就以及运动成就等，并提供社交化分享，相信微信会给摩拜提供更好地分享的渠道。</li>
+<li>很多运动APP都提供骑行的运动方式，可以与这些APP共享骑行数据，更方便用户在运动APP内晒自己的骑行数据。</li>
+<li>单次骑行的分享形式在保持推广的能力之外加入更好的社交化形式。让用户乐于去晒自己单次骑行的数据。</li>
+</ol>
+
+<h2 id="4-总结">4. 总结</h2>
+
+<p>以上只是自己根据摩拜因自身硬件的完备性，智能锁的双向通信，构建出自己的闭环生态所想到的一些拓展。有一些根本没什么可能性，有些也可能不值得去做。在将来，摩拜可能向 LBS，碳账户，健身或社交的一个活几个方向拓展业务，也可能只专注于做自己的共享单车领域。不过这都没关系，重要的是记录下自己这次的思考过程。</p>
+
+
+  <footer>
+  
+<nav class="post-nav">
+  <span class="nav-prev">&larr; <a href="/post/2017/06/09/2017-06-09/">Android Thread，Handler 和 Looper</a></span>
+  <span class="nav-next"><a href="/post/2017/06/30/2017-06-30/">广州故事拾遗</a> &rarr;</span>
+</nav>
+
+
+
+
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+
+  
+  <hr>
+  <div class="copyright">&copy; 2012-2018 | <a href="https://yihui.name">Yang Jiacheng</a> | <a href="https://github.com/yihui">Github</a> | <a href="https://twitter.com/xieyihui">Twitter</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
