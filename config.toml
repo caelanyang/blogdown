@@ -6,6 +6,7 @@ googleAnalytics = "UA-79173423-1"
 disqusShortname = "caelan"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
+enableEmoji = true
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
