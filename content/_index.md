@@ -2,8 +2,11 @@
 title: Home
 ---
 
-[<img src="/images/0.jpg" style="max-width:15%;min-width:200px;float:right;" alt="Logo" />](https://cheng.netlify.com/)
-
+[<img src="/images/0.jpg" style="max-width:15%;min-width:200px;float:right;display: block;" alt="logo"/> ](https://cheng.netlify.com/)
+<!--
+[<p style="float:right;display: block;" alt="logo"> 阅读是为了思想的自由 <br> 思想是为了精神的自由 <br> 精神的自由即灵魂的自由。
+</p>](https://cheng.netlify.com/)
+-->
 
 这里是杨嘉程的个人主页。15年大学毕业，  
 目前在广州久邦就职，从事 Android 开发。  
