@@ -2,7 +2,7 @@
 title: Home
 ---
 
-[<img src="/images/0.jpg" style="max-width:15%;min-width:200px;float:right;display: block;" alt="logo"/> ](https://cheng.netlify.com/)
+[<img src="/images/0.jpg" style="max-width:15%;min-width:150px;float:right;display: block;" alt="logo"/> ](https://cheng.netlify.com/)
 <!--
 [<p style="float:right;display: block;" alt="logo"> 阅读是为了思想的自由 <br> 思想是为了精神的自由 <br> 精神的自由即灵魂的自由。
 </p>](https://cheng.netlify.com/)
