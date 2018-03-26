@@ -39,7 +39,7 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "Yang Jiacheng's Home Page."
-    footer = "&copy; 2012-2018 | [Yang Jiacheng]("/") | [Github](https://github.com/caelanyang)"
+    footer = "&copy; 2012-2018 | [Yang Jiacheng](/) | [Github](https://github.com/caelanyang)"
     customJS =  ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js", "js/math-code.js"]
     
   highlightjsVersion = "9.12.0"
