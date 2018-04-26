@@ -26,11 +26,61 @@ tags:
 
 于是，我就尝试着把 Adapter 进行解耦，而且也仅仅只是解耦:smile:。
 
-回到前面所说的，adapter 之所以耦合度比较高，是因为它同时实现了数据集，视图的创建、绑定。所以解耦的第一个思路自然是把数据与试图分开。观察平常 Adapter 的使用，可以看到 Adapter 中关于数据，有几个比较重要的方法：
+回到前面所说的，adapter 之所以耦合度比较高，是因为它同时实现了数据集，视图的创建、绑定。所以解耦的第一个思路自然是把数据与视图抽离出来。
+
+于是，将 Adapter 中关于数据集的几个关键方法抽成一个接口：
+
+``` java
+public interface DataSource<Model> {
+
+    int getDataType(int position);
+
+    int getDataCount();
+
+    Model getData(int position);
+}
+```
+
+这个接口已经包含获取数据对应的Item 类型，Item 个数，以及指定 position 的数据的方法，已经能够给 Adapter 提供数据了。
 
 
+Adapter 中关于视图的方法主要有两个：`onCreateViewHolder()` ， `onBindViewHolder()`，一个负责视图的创建，一个负责视图的绑定。
 
+然而对于不同的Item类型可能会需要不同的ViewHolder，考虑到ViewHolder只是为了 Hold 住对应视图的ItemView，以及它的子View，所以创建一个通用的ViewHolder类来实现这一功能：
 
+``` java 
+@SuppressWarnings("WeakerAccess")
+public class SuperViewHolder extends RecyclerView.ViewHolder {
 
+    private SparseArray<View> viewHolder = new SparseArray<>();
+
+    public SuperViewHolder(View itemView) {
+        this(itemView, new int[0]);
+    }
+
+    public SuperViewHolder(View itemView, @IdRes int... ids) {
+        super(itemView);
+        holderChildViewByIds(ids);
+    }
+
+    public void holderChildViewByIds(@IdRes int... ids) {
+        for (int id : ids) {
+            viewHolder.put(id, itemView.findViewById(id));
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T extends View> T get(@IdRes int id) {
+        View view = viewHolder.get(id);
+        if (view == null) {
+            view = itemView.findViewById(id);
+            viewHolder.put(id, view);
+        }
+        return (T) view;
+    }
+}
+```
+
+使用一个 SparseArray 来保存已经被find的View，可以在构造 SuperViewHolder 传入需要用到的子View的Id进行hold，也可以
 
 
