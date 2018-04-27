@@ -81,6 +81,6 @@ public class SuperViewHolder extends RecyclerView.ViewHolder {
 }
 ```
 
-使用一个 SparseArray 来保存已经被find的View，可以在构造 SuperViewHolder 传入需要用到的子View的Id进行hold，也可以
+使用一个 SparseArray 来保存已经被find的子View，并使用只view的id作为key。可以在构造 SuperViewHolder 的时候传入需要 hold 的 view， 传入需要用到的子 View 的 Id 进行 hold，也可以在合适时机通过 `holderChildViewByIds()`，否则只有通过 `get(int id)` 的时候才会find子view。
 
 
