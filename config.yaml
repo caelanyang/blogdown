@@ -60,3 +60,4 @@ params:
 blackfriday:
     extensionsmask: ["noIntraEmphasis"]
     fractions: false
+    
