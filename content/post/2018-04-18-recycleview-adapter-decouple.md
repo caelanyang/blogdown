@@ -43,8 +43,7 @@ public interface DataSource<Model> {
 
 这个接口已经包含获取数据对应的Item 类型，Item 个数，以及指定 position 的数据的方法，已经能够给 Adapter 提供数据了。
 
-
-Adapter 中关于视图的方法主要有两个：`onCreateViewHolder()` ， `onBindViewHolder()`，一个负责视图的创建，一个负责视图的绑定。
+Adapter 中关于视图的方法主要有两个：`onCreateViewHolder()` ， `onBindViewHolder()`，一个负责视图的创建，一个负责视图的绑定。把这个两个主要的方法单独抽象出来。
 
 然而对于不同的Item类型可能会需要不同的ViewHolder，考虑到ViewHolder只是为了 Hold 住对应视图的ItemView，以及它的子View，所以创建一个通用的ViewHolder类来实现这一功能：
 
