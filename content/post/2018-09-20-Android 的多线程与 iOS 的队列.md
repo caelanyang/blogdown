@@ -1,5 +1,5 @@
 ---
-title: iOS 中的线程与队列
+title: 2018-09-20-Android 的多线程与 iOS 的队列
 author: 杨嘉程
 date: '2018-09-20'
 slug: threads and queues in iOS
