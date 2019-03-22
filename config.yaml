@@ -33,7 +33,7 @@ menu:
       url: "/tags/"
       weight: 5
     - name: "Subscribe"
-      url: "/index.xml"
+      url: "/post/index.xml"
       weight: 6
   
 
