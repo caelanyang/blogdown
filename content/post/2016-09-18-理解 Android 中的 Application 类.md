@@ -1,6 +1,6 @@
 ---
 title: 理解 Android 中的 Application 类
-author: 杨嘉程
+author: Jiacheng
 date: '2016-09-18'
 slug: '2016-09-18'
 categories:

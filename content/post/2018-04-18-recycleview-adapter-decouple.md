@@ -1,6 +1,6 @@
 ---
 title: RecycleView Adapter 的解耦实现
-author: 杨嘉程
+author: Jiacheng
 date: '2018-04-18'
 slug: recycleview-adapter-decouple
 categories:

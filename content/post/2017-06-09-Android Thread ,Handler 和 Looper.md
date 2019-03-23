@@ -1,6 +1,6 @@
 ---
 title: Android Thread，Handler 和 Looper
-author: 杨嘉程
+author: Jiacheng
 date: '2017-06-09'
 slug: '2017-06-09'
 categories:
