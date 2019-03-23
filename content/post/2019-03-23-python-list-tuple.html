@@ -1,0 +1,117 @@
+---
+title: 'Python 内部的优化技巧: list 和 tuple'
+author: ' Jiacheng'
+date: '2019-03-23'
+slug: python-list-tuple
+categories:
+  - Technology
+tags:
+  - Python
+  - Tuple
+  - List
+---
+
+
+
+<p>Python 有两种类似的有序集合类型，list 和 tuple。 众所周知，它们之间最大的区别： tuple 是不可变的，即不能改变 tuple 的大小以及 tuple 内不可变元素。</p>
+<p>你不能改变 tuple 中的元素:</p>
+<pre class="python"><code>&gt;&gt;&gt; a = (1,2,3)
+&gt;&gt;&gt; a[0] = 10
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
+<p>但是 tuple 里面的可变元素是可以更改的:</p>
+<pre class="python"><code>&gt;&gt;&gt; b = (1,[1,2,3],3)
+&gt;&gt;&gt; b[1]
+[1, 2, 3]
+&gt;&gt;&gt; b[1].append(4)
+&gt;&gt;&gt; b
+(1, [1, 2, 3, 4], 3)</code></pre>
+<p>在内部，list 和 tuple 都是用来存放 Python 对象指针的列表。 从列表中删除项时，对象的引用将被销毁。 但是如果程序中有其他引用，那么被删除的项目可以继续存在。</p>
+<div id="tuple" class="section level4">
+<h4>Tuple</h4>
+<p>尽管实际上 tuple 没有 list 那么常用，但它是一种基本的数据类型，在内部经常使用。 在一些没有注意到的情况下是使用 tuple 的，比如：</p>
+<ul>
+<li>函数的参数值和参数名</li>
+<li>从一个函数返回两个或多个项</li>
+<li>遍历 dictionary 的键值对</li>
+<li>使用字符串格式</li>
+</ul>
+<p>通常，一个正在运行的程序有数千个已分配的 tuple 。</p>
+<p>```python import gc<br />
+def type_stats(type_obj):<br />
+count = 0 for obj in gc.get_objects():<br />
+if type(obj) == type_obj: count += 1 return count</p>
+<p>type_stats(tuple)<br />
+12083 type_stats(list)<br />
+4034 ```</p>
+</div>
+<div id="-list---tuple" class="section level4">
+<h4>空 list 与 空 tuple</h4>
+<p>空 tuple 类似于一个单例，也即，总是只存在一个长度为零的 tuple。 创建新的空 tuple 时，会指向已经预先分配的空 tuple，这样任何空 tuple 在内存中都有相同的地址。 这是因为 tuple 是不可变的，有时候这样可以节省大量内存。</p>
+<pre class="python"><code>In [1]: a = ()                                                                  
+In [2]: b = ()                                                                  
+In [3]: a is b                                                                  
+Out[3]: True
+In [4]: id(a)                                                                   
+Out[4]: 4445229128
+In [5]: id(b)                                                                   
+Out[5]: 4445229128</code></pre>
+<p>但 list 却不是这样的，因为 list 可以被修改。</p>
+<pre class="python"><code>In [1]: a = []                                                                  
+In [2]: b = []                                                                  
+In [3]: a is b                                                                  
+Out[3]: False
+In [4]: id(a)                                                                   
+Out[4]: 4454703304
+In [5]: id(b)                                                                   
+Out[5]: 4454687240</code></pre>
+</div>
+<div id="tuple-" class="section level4">
+<h4>tuple 的内存分配优化</h4>
+<p>为减少内存碎片和加速分配，Python 会重用旧的 tuple。 如果一个 tuple 不再需要并且只有少于20个元素，Python 不会将其永久删除，而是将其移动到一个空闲列表（free list）中。 一个空闲列表被分成20个组，每个组代表一个长度在 0 到 20 之间的 tuple 列表。 每个组最多可以存储 2000 个tuple。 第一个组只包含 1 个空的 tuple。</p>
+<pre class="python"><code>&gt;&gt;&gt; a = (1,2,3)
+&gt;&gt;&gt; id(a)
+4412372024
+&gt;&gt;&gt; del a 
+&gt;&gt;&gt; b = (1,2,4)
+&gt;&gt;&gt; id(b)
+4412372024</code></pre>
+<div id="-ipython-" class="section level6">
+<h6>这段代码在 ipython 中没有复现。</h6>
+<p>在上面的例子中，我们可以看到 a 和 b 有相同的 id。 这是因为我们立即占用一个被销毁的 tuple，这个 tuple 销毁后被放在空闲列表中。</p>
+</div>
+</div>
+<div id="list-" class="section level4">
+<h4>list 的内存分配优化</h4>
+<p>由于 list 是可变的，Python 不会使用与 tuple 的相同优化方式。 然而，list 也有一个空闲列表，但它只用于空对象。 如果一个空列表被删除或 GC 回收，它可以在以后重用。</p>
+<pre class="python"><code>&gt;&gt;&gt; a = []
+&gt;&gt;&gt; id(a)
+4412088136
+&gt;&gt;&gt; del a
+&gt;&gt;&gt; b = []
+&gt;&gt;&gt; id(b)
+4412088136</code></pre>
+</div>
+<div id="-list-resize" class="section level4">
+<h4>调整 list 的大小（resize）</h4>
+<p>为避免调整大小的开销，Python 不会在每次需要添加或删除某个项时都调整 list 的大小。 因为每个 list 都有一些空的位置，只不过这些空位置用户看不到，但可以用来添加新的元素。 如果空位置已用完，Python 就会分配额外的空间增加新的空位置。 新增空位置的数量由 list 当前的大小决定。</p>
+<p>Python 开发者文档描述如下: 这种额外分配与 list 大小成正比，为后续增长留出空间。 这种额外分配是轻量的，足以在性能不佳的系统 realloc 存在的情况下，保证长序列 append 时间线性增长。</p>
+<p>list 长度的增长模式为： 0, 4, 8, 16, 25, 35, 46, 58, 72, 88，…</p>
+<p>注意: 新分配的值不会溢出，因为最大的可能值为 <code>PY_SSIZE_T_MAX * (9 / 8) + 6</code> <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>，它总是小于 <code>size_t</code><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>的值。</p>
+<p>例如，如果要将一个元素 append 到一个长度为 8 的 list 中，Python 会将其长度调整为 16 ，并将此元素添加第 9 个位置。 其余的位置将被隐藏并保留给新的元素。</p>
+<p>resizing 增长因子如下:</p>
+<pre class="python"><code>&gt;&gt;&gt; def get_new_size(n_items):
+...     new_size = (size_t)n_items + (n_items &gt;&gt; 3) + (n_items &lt; 9 ? 3 : 6);
+...     return new_size
+...
+&gt;&gt;&gt; get_new_size(9)
+16</code></pre>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>PY_SSIZE_T_MAX 在 32 位系统为 2<sup>31</sup> -1 <span class="math inline">\(2^{31}\)</span>，在 64 位系统为 2<sup>63</sup> -1<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>在 32 位系统上为 unsigned int ,在 64 位系统上为 unsigned long int<a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
