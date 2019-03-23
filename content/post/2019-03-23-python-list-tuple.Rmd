@@ -11,10 +11,6 @@ tags:
   - List
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
-```
-
 Python 有两种类似的有序集合类型，list 和 tuple。 众所周知，它们之间最大的区别： tuple 是不可变的，即不能改变 tuple 的大小以及 tuple 内不可变元素。
 
 你不能改变 tuple 中的元素:
