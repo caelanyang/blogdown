@@ -1,7 +1,7 @@
 ---
 
 title: A Plain Markdown Post
-author: Yihui Xie
+author: Jiacheng
 date: '2016-02-14'
 categories:
   - Example
