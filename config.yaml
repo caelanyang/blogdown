@@ -46,7 +46,7 @@ params:
   description: | 
     除了自己的无知， 
       我什么都不懂。
-  footer: "&copy; 2012-2018 | [Yang Jiacheng](/) | [Github](https://github.com/caelanyang)"
+  footer: "&copy; 2012-2018 | [Jiacheng](/) | [Github](https://github.com/caelanyang)"
   customJS: ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js", "js/math-code.js"]
 
   # options for highlight.js (version, additional languages, and theme)
