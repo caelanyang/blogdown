@@ -61,7 +61,7 @@ type_stats(tuple)
 12083
 type_stats(list)                                                        
 4034
- ```
+```
 
 #### 空 list 与 空 tuple
 
@@ -146,7 +146,7 @@ resizing 增长因子如下:
 >>> get_new_size(9)
 16
 ```
-
+这是一篇译文，[阅读原文](https://rushter.com/blog/python-lists-and-tuples/)
 
 
 

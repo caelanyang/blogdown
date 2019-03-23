@@ -38,13 +38,18 @@ TypeError: &#39;tuple&#39; object does not support item assignment</code></pre>
 <li>使用字符串格式</li>
 </ul>
 <p>通常，一个正在运行的程序有数千个已分配的 tuple 。</p>
-<p>```python import gc<br />
-def type_stats(type_obj):<br />
-count = 0 for obj in gc.get_objects():<br />
-if type(obj) == type_obj: count += 1 return count</p>
-<p>type_stats(tuple)<br />
-12083 type_stats(list)<br />
-4034 ```</p>
+<pre class="python"><code>import gc                                                               
+def type_stats(type_obj):  
+    count = 0 
+    for obj in gc.get_objects():  
+        if type(obj) == type_obj: 
+            count += 1 
+    return count 
+                                                                       
+type_stats(tuple)                                                       
+12083
+type_stats(list)                                                        
+4034</code></pre>
 </div>
 <div id="-list---tuple" class="section level4">
 <h4>空 list 与 空 tuple</h4>
@@ -107,6 +112,7 @@ Out[5]: 4454687240</code></pre>
 ...
 &gt;&gt;&gt; get_new_size(9)
 16</code></pre>
+<p>这是一篇译文，<a href="https://rushter.com/blog/python-lists-and-tuples/">阅读原文</a></p>
 </div>
 <div class="footnotes">
 <hr />
