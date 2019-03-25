@@ -148,7 +148,11 @@ resizing 增长因子如下:
 ```
 这是一篇译文，[阅读原文](https://rushter.com/blog/python-lists-and-tuples/)
 
+#### References
 
+[sys.maxsize in Python](https://docs.python.org/3/library/sys.html#sys.maxsize)
+
+[resize implemented in CPython](https://github.com/python/cpython/blob/master/Objects/listobject.c)
 
 
 
