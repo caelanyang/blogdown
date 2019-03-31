@@ -22,30 +22,31 @@ permalinks:
 
 menu:
   main:
-    - name: "Home"
+    - name: "首页"
       url: "/"
       weight: 1
-    - name: "Blog"
+    - name: "博客"
       url: "/post/"
       weight: 2
-    - name: "About"
+    - name: "关于"
       url: "/about/"
       weight: 3
-    - name: "Categories"
+    - name: "分类"
       url: "/categories/"
       weight: 4
-    - name: "Tags"
+    - name: "标签"
       url: "/tags/"
       weight: 5
-    - name: "Subscribe"
+    - name: "订阅 RSS"
       url: "/post/index.xml"
       weight: 6
+    - name: "数据结构系列"
+      url: "https://ds.jiacheng.site"
+      weight: 7
   
 
 params:
-  description: | 
-    除了自己的无知， 
-      我什么都不懂。
+  description: 哦哦~
   footer: "&copy; 2012-2018 | [Jiacheng](/) | [Github](https://github.com/caelanyang)"
   customJS: ["js/center-img.js", "js/right-quote.js", "js/no-highlight.js", "js/fix-footnote.js", "js/math-code.js"]
 
