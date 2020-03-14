@@ -28,13 +28,13 @@ menu:
     - name: "Blog"
       url: "/post/"
       weight: 2
-    - name: "about"
+    - name: "About"
       url: "/about/"
       weight: 3
-    - name: "category"
+    - name: "Category"
       url: "/categories/"
       weight: 4
-    - name: "tag"
+    - name: "Tags"
       url: "/tags/"
       weight: 5
     - name: "RSS"
