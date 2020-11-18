@@ -31,18 +31,21 @@ menu:
     - name: "About"
       url: "/about/"
       weight: 3
-    - name: "Category"
-      url: "/categories/"
+    - name: "Cookbook"
+      url: "/cookbook/"
       weight: 4
-    - name: "Tags"
-      url: "/tags/"
-      weight: 5
-    - name: "RSS"
-      url: "/post/index.xml"
-      weight: 6
     - name: "Data Structure"
       url: "/data-structure/"
+      weight: 5
+    - name: ""
+      url: ""
+      weight: 6
+    - name: "RSS"
+      url: "/post/index.xml"
       weight: 7
+    - name: "License"
+      url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      weight: 8
   
 
 params:
