@@ -1,3 +1,6 @@
 [submodule "themes/hugo-ivy"]
 	path = themes/hugo-ivy
 	url = https://github.com/yihui/hugo-ivy.git
+[submodule "content/words/nonsense"]
+	path = content/words/nonsense
+	url = https://github.com/caelanyang/nonsense.fun.git
