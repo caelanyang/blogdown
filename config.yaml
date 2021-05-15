@@ -28,11 +28,14 @@ menu:
     - name: "Blog"
       url: "/post/"
       weight: 2
-    - name: "About"
-      url: "/about/"
-      weight: 3
+    - name: "Comments"
+      url: "/post/"
+      weight: 2
     - name: "Words"
       url: "/words/nonsense/index.html"
+      weight: 3
+    - name: "About"
+      url: "/about/"
       weight: 4
     - name: "Cookbook"
       url: "/cookbook/"
