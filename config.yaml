@@ -28,8 +28,8 @@ menu:
     - name: "Blog"
       url: "/post/"
       weight: 2
-    - name: "Comments"
-      url: "https://comments.jiacheng.site/"
+    - name: "Momments"
+      url: "https://momments.jiacheng.site/"
       weight: 2
     - name: "Words"
       url: "/words/nonsense/index.html"
