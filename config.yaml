@@ -31,9 +31,6 @@ menu:
     - name: "Momments"
       url: "https://moments.jiacheng.site/"
       weight: 2
-    - name: "Words"
-      url: "/words/nonsense/index.html"
-      weight: 3
     - name: "About"
       url: "/about/"
       weight: 4
