@@ -11,6 +11,7 @@ title: Home
 目前在广州从事 Android 以及 iOS 应用开发。  
 平常喜欢折腾点东西，喜欢看点书，喜欢摄影，XJB 拍点照片，偶尔也会写点什么。
 
+<!--
 ![](https://raw.githubusercontent.com/caelanyang/MarkdownPictures/master/uPic/index.jpg)
-
+-->
 
